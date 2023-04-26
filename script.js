@@ -168,7 +168,7 @@ botaocalcular.addEventListener("click", function(){
 
 //FIM DO BOTAO CALCULAR
 
-
+//ausauhuahuuasush
 
 
 //LEGENDA DO RESULTADO
