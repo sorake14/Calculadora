@@ -100,6 +100,8 @@ nome.placeholder = "Digite seu nome"
 nome.style.textAlign = "center"
 nome.style.height = "30px"
 nome.style.width = "500px"
+nome.style.borderRadius = "5px"
+
 box2.appendChild(nome)
 
 
@@ -111,9 +113,12 @@ box2.appendChild(stringpeso)
 const peso = document.createElement("input")
 peso.id = "peso"
 peso.type = "number"
+peso.placeholder = "Digite seu peso"
 peso.style.textAlign = "center"
 peso.style.height = "30px"
-peso.style.width = "100px"
+peso.style.width = "135px"
+peso.style.borderRadius = "5px"
+
 box2.appendChild(peso)
 
 
@@ -125,10 +130,12 @@ box2.appendChild(stringaltura)
 const altura = document.createElement("input")
 altura.id = "altura"
 altura.type = "number"
+altura.placeholder = "Digite sua altura"
 altura.step = "1.01"
 altura.style.textAlign = "center"
 altura.style.height = "30px"
-altura.style.width = "100px"
+altura.style.width = "135px"
+altura.style.borderRadius = "5px"
 
 box2.appendChild(altura)
 
@@ -145,10 +152,16 @@ botaocalcular.style.height = "30px"
 botaocalcular.style.width = "100px"
 botaocalcular.style.marginTop = "20px"
 botaocalcular.style.marginBottom = "20px"
+botaocalcular.style.backgroundColor = "#00FA9A"
+botaocalcular.style.borderRadius = "15px"
 
 box2.appendChild(botaocalcular)
 
 botaocalcular.addEventListener("click", function(){
+    
+    const nome = document.getElementById("nome").value
+    const peso = document.getElementById("peso").value
+    const altura = document.getElementById("altura").value
     const resultado = peso / (altura * altura)
 })
 
@@ -157,3 +170,66 @@ botaocalcular.addEventListener("click", function(){
 
 
 
+
+//LEGENDA DO RESULTADO
+const box3 = document.createElement("div")
+    box3.style.height = "100px"
+    box3.style.width = "100%"
+    box3.style.backgroundColor = "#DCDCDC"
+    box3.style.display = "flex"
+    box3.style.justifyContent = "space-around"
+    box3.style.alignItems = "center"
+
+box2.appendChild(box3)
+
+const azul = document.createElement ("div")
+    azul.style.height = "20px"
+    azul.style.width = "20px"
+    azul.style.backgroundColor = "blue"
+    box3.appendChild(azul)
+
+const stringazul = document.createElement("h3")
+    stringazul.textContent = "Abaixo do peso"
+    box3.appendChild(stringazul)
+
+
+
+
+
+const verde = document.createElement ("div")
+    verde.style.height = "20px"
+    verde.style.width = "20px"
+    verde.style.backgroundColor = "green"
+    box3.appendChild(verde)
+
+const stringverde = document.createElement("h3")
+    stringverde.textContent = "Peso normal"
+    box3.appendChild(stringverde)
+
+
+
+
+
+const amarelo = document.createElement ("div")
+    amarelo.style.height = "20px"
+    amarelo.style.width = "20px"
+    amarelo.style.backgroundColor = "yellow"
+    box3.appendChild(amarelo)
+
+const stringamarelo = document.createElement("h3")
+    stringamarelo.textContent = "Acima do peso"
+    box3.appendChild(stringamarelo)
+
+
+
+
+
+const red = document.createElement ("div")
+    red.style.height = "20px"
+    red.style.width = "20px"
+    red.style.backgroundColor = "red"
+    box3.appendChild(red)
+
+const stringred = document.createElement("h3")
+    stringred.textContent = "Obesidade"
+    box3.appendChild(stringred)
