@@ -1,4 +1,3 @@
-
 //HEADER
 const header = document.createElement("div")
 
@@ -12,7 +11,6 @@ header.style.display = "flex"
 header.style.justifyContent = "center"
 header.style.alignItems = "center"
 header.style.flexDirection = "column"
-
 
 document.body.appendChild(header)
 //FIM DO HEADER
@@ -64,6 +62,8 @@ box1.style.alignItems = "center"
 
 document.body.appendChild(box1)
 
+
+
 const box2 = document.createElement("div")
 
 box2.style.height = "80%"
@@ -88,7 +88,6 @@ box1.appendChild(box2)
 
 
 //NOME, PESO, ALTURA E RESULTADO
-
 const stringnome = document.createElement("h3")
 stringnome.textContent = "Nome:"
 box2.appendChild(stringnome)
@@ -138,11 +137,10 @@ altura.style.width = "135px"
 altura.style.borderRadius = "5px"
 
 box2.appendChild(altura)
-
-
-
-
 //FIM DO NOME, PESO, ALTURA E RESULTADO
+
+
+
 
 
 //BOTAO CALCULAR
@@ -162,10 +160,13 @@ botaocalcular.addEventListener("click", function(){
     const nome = document.getElementById("nome").value
     const peso = document.getElementById("peso").value
     const altura = document.getElementById("altura").value
-    const resultado = peso / (altura * altura)
+    const resultado = (peso / (altura * altura)).toFixed(1)
+
+    const result1 = document.createElement("h3")
+    result1.textContent = ("Olá, " + nome + " seu IMC é de: " + resultado)
+    footer.appendChild(result1)
+
 })
-
-
 //FIM DO BOTAO CALCULAR
 
 
@@ -233,3 +234,21 @@ const red = document.createElement ("div")
 const stringred = document.createElement("h3")
     stringred.textContent = "Obesidade"
     box3.appendChild(stringred)
+
+
+
+
+//INICIO DO FOOTER
+
+const footer = document.createElement("div")
+
+footer.style.height = "90px"
+footer.style.width = "100%"
+footer.style.backgroundColor = "rgb(0, 0, 0, 0.7)"
+footer.style.color = "white"
+footer.style.borderTop = "11px double #999"
+footer.style.borderBottom = "11px double #999"
+
+
+document.body.appendChild(footer)
+//FIM DO FOOTER
