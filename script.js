@@ -242,13 +242,16 @@ const stringred = document.createElement("h3")
 
 const footer = document.createElement("div")
 
-footer.style.height = "90px"
+footer.style.height = "92px"
 footer.style.width = "100%"
 footer.style.backgroundColor = "rgb(0, 0, 0, 0.7)"
-footer.style.color = "white"
+footer.style.display = "flex"
+footer.style.flexDirection = "column"
+footer.style.flexWrap = "wrap"
+footer.style.color = "red"
+footer.style.fontSize = "10px"
 footer.style.borderTop = "11px double #999"
 footer.style.borderBottom = "11px double #999"
-
 
 document.body.appendChild(footer)
 //FIM DO FOOTER
