@@ -87,7 +87,7 @@ box1.appendChild(box2)
 
 
 
-//NOME, PESO, ALTURA E RESULTADO
+//NOME, PESO, ALTURA E IDADE
 const stringnome = document.createElement("h3")
 stringnome.textContent = "Nome:"
 box2.appendChild(stringnome)
@@ -137,7 +137,7 @@ altura.style.width = "135px"
 altura.style.borderRadius = "5px"
 
 box2.appendChild(altura)
-//FIM DO NOME, PESO, ALTURA E RESULTADO
+//FIM DO NOME, PESO, ALTURA E IDADE
 
 
 
@@ -162,8 +162,27 @@ botaocalcular.addEventListener("click", function(){
     const altura = document.getElementById("altura").value
     const resultado = (peso / (altura * altura)).toFixed(1)
 
-    const result1 = document.createElement("h3")
-    result1.textContent = ("Olá, " + nome + " seu IMC é de: " + resultado)
+    
+    const result1 = document.createElement("div")
+        if (resultado <= 18.5){
+            result1.textContent = ("Olá, " + nome + "! Seu IMC é de: " + resultado)
+            result1.style.backgroundColor = "blue"
+        }
+        else if (resultado >= 18.6 && resultado <= 24.9){
+            result1.textContent = ("Olá, " + nome + "! Seu IMC é de: " + resultado)
+            result1.style.backgroundColor = "green"
+        }
+        else if (resultado >= 25 && resultado <= 29.9){
+            result1.textContent = ("Olá, " + nome + "! Seu IMC é de: " + resultado)
+            result1.style.backgroundColor = "yellow"
+        }
+        else if (resultado >= 30){
+            result1.textContent = ("Olá, " + nome + "! Seu IMC é de: " + resultado)
+            result1.style.backgroundColor = "red"
+        }
+        setTimeout(function() {
+            result1.style.display = 'none';
+          }, 5000);
     footer.appendChild(result1)
 
 })
@@ -248,7 +267,7 @@ footer.style.backgroundColor = "rgb(0, 0, 0, 0.7)"
 footer.style.display = "flex"
 footer.style.flexDirection = "column"
 footer.style.flexWrap = "wrap"
-footer.style.color = "red"
+footer.style.color = "black"
 footer.style.fontSize = "10px"
 footer.style.borderTop = "11px double #999"
 footer.style.borderBottom = "11px double #999"
